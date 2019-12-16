@@ -1,3 +1,4 @@
+# Hmmm....
 defmodule FarmbotCeleryScript.Compiler.IdentifierSanitizer do
   @moduledoc """
   Responsible for ensuring variable names in Sequences are clean.
@@ -13,6 +14,7 @@ defmodule FarmbotCeleryScript.Compiler.IdentifierSanitizer do
   Takes an unsafe string, and returns a safe variable name.
   """
   def to_variable(string) when is_binary(string) do
+    # Why tho?
     String.to_atom(@token <> Base.url_encode64(string, padding: false))
   end
 

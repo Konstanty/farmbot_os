@@ -1,4 +1,5 @@
 defmodule FarmbotFirmware.Request do
+  # What is this?
   @moduledoc false
   alias FarmbotFirmware
   alias FarmbotFirmware.GCODE

@@ -4,6 +4,7 @@ defmodule FarmbotOS.Configurator.ConfigDataLayer do
   gathering and storing data Via Ecto.
   """
 
+  # Huh?
   @behaviour FarmbotOS.Configurator.DataLayer
   require FarmbotCore.Logger
   alias FarmbotCore.Config

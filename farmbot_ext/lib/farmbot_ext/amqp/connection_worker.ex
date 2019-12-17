@@ -54,7 +54,9 @@ defmodule FarmbotExt.AMQP.ConnectionWorker do
          {:ok, _} <- maybe_purge(chan, chan_name, purge?),
          :ok <- Queue.bind(chan, chan_name, @exchange, routing_key: route),
          {:ok, _} <- Basic.consume(chan, chan_name, self(), no_ack: true) do
+      # Hmmm...
       Process.link(conn.pid)
+      # Hmmm...
       Process.link(chan.pid)
       FarmbotTelemetry.event(:amqp, :channel_open)
       FarmbotTelemetry.event(:amqp, :queue_bind, nil, queue_name: chan_name, routing_key: route)

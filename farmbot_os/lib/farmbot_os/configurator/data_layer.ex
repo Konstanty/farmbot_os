@@ -3,6 +3,7 @@ defmodule FarmbotOS.Configurator.DataLayer do
   intermediate layer for stubbing configuration data
   """
 
+  # Huh?
   # "net_config_dns_name" => String.t()
   # "net_config_ntp1" => String.t()
   # "net_config_ntp2" => String.t()

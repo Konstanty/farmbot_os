@@ -6,6 +6,7 @@ defmodule FarmbotOS.Configurator.DetsTelemetryLayer do
   Still a work in progress.
   """
 
+  # Huh?
   @behaviour FarmbotOS.Configurator.TelemetryLayer
 
   @impl FarmbotOS.Configurator.TelemetryLayer

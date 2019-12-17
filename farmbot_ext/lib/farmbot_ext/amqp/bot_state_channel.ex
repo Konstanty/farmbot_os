@@ -32,6 +32,7 @@ defmodule FarmbotExt.AMQP.BotStateChannel do
   @impl GenServer
   def init(args) do
     jwt = Keyword.fetch!(args, :jwt)
+    # Why?
     Process.flag(:sensitive, true)
     cache = BotState.subscribe()
     {:ok, %State{conn: nil, chan: nil, jwt: jwt, cache: cache}, 0}

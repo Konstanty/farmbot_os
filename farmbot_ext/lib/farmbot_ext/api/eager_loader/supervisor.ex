@@ -4,6 +4,7 @@ defmodule FarmbotExt.API.EagerLoader.Supervisor do
   eagerloaded
   """
 
+  # What does this do?
   use Supervisor
   alias FarmbotExt.API.EagerLoader
 

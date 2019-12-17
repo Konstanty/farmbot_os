@@ -89,6 +89,7 @@ defmodule FarmbotTelemetry do
   def bare_telemetry(uuid, kind, subsystem, measurement, value, captured_at, meta)
       when is_binary(uuid) and is_atom(kind) and is_atom(subsystem) and is_atom(measurement) and
              is_list(meta) do
+    # So this is an Erlang thing?
     _ =
       :telemetry.execute(
         [:farmbot_telemetry, kind, subsystem],
@@ -96,6 +97,7 @@ defmodule FarmbotTelemetry do
         Map.new(meta)
       )
 
+    # DETs, aye?
     _ =
       :dets.insert(
         :farmbot_telemetry,
@@ -140,10 +142,10 @@ defmodule FarmbotTelemetry do
   @doc """
   Syncronously consume telemetry events.
 
-  Function will be evaluated once for every telemetry event, 
-  blocking until complete. Function should complete within 
+  Function will be evaluated once for every telemetry event,
+  blocking until complete. Function should complete within
   5 seconds per each event. Function should return `:ok` if
-  the event was successfully consumed, anything else will 
+  the event was successfully consumed, anything else will
   cause the event to be put back on the queue
   """
   @spec consume_telemetry(consumer_fun()) :: :ok

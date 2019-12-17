@@ -4,6 +4,7 @@ defmodule FarmbotExt.API.DirtyWorker.Supervisor do
   uploaded to the API via a `POST` or `PUT` request. 
   """
 
+  # What does this do?
   use Supervisor
   alias FarmbotExt.API.DirtyWorker
 

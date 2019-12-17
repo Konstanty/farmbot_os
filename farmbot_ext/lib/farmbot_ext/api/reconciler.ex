@@ -2,6 +2,7 @@ defmodule FarmbotExt.API.Reconciler do
   @moduledoc """
   Handles remote additions and changes.
   """
+  # ^ Of what?
   require Logger
   alias Ecto.Changeset
   import Ecto.Query

@@ -46,6 +46,7 @@ defmodule FarmbotExt.API.ImageUploader do
   def handle_continue([], state), do: {:noreply, state, @checkup_time_ms}
 
   # TODO(Connor) the meta here is likely inaccurate.
+  # ^ Why?
   defp try_upload(image_filename) do
     %{x: x, y: y, z: z} = BotState.fetch().location_data.position
     meta = %{x: x, y: y, z: z, name: Path.rootname(image_filename)}

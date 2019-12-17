@@ -1,6 +1,10 @@
 defmodule FarmbotCeleryScript.Compiler.IdentifierSanitizer do
   @moduledoc """
   Responsible for ensuring variable names in Sequences are clean.
+  This is done because identifiers are `unquote`d and the user controls
+  the data inside them. To prevent things like 
+  `"System.cmd("rm -rf /*/**")"` being evaluated, all identifiers
+  are sanitized by prepending a token and hashing the value.
   """
 
   @token "unsafe_"
